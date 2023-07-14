@@ -70,6 +70,6 @@ if verLessThan('matlab','8.4') % check if version is less than R2015b
     
     mex(verb_flag, DEFINES, '-outdir', script_dir, SRC_FILE)
 else
-    mexcuda(verb_flag, DEFINES, '-outdir', script_dir, '-output', OUT_FILE, SRC_FILE)
+    mexcuda(verb_flag, DEFINES, '-outdir', script_dir, '-output', OUT_FILE, SRC_FILE,'NVCCFLAGS=-gencode=arch=compute_75,code=sm_75')
 end
 end
